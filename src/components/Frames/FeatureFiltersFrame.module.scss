@@ -1,0 +1,37 @@
+.filtersFrameContainer {
+  position: relative;
+}
+
+.filtersFrame {
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.filtersFrameVendor1 {
+  position: absolute;
+  left: -7.5%;
+  top: 27%;
+  width: 1.7rem;
+}
+
+.filtersFrameVendor2 {
+  position: absolute;
+  right: -7.5%;
+  top: 27%;
+  width: 1.7rem;
+}
+
+.filtersFrameImg {
+  width: 244px;
+}
+
+@media (min-width: 1024px) {
+  .filtersFrameVendor1, .filtersFrameVendor2  {
+    width: 42px;
+    top: 26%;
+  }
+  .filtersFrameImg {
+    width: 100%;
+  }
+  
+}

@@ -1,0 +1,48 @@
+.signFrameContainer {
+  position: relative;
+}
+
+.signFrame {
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.signFrameVendor1 {
+  position: absolute;
+  left: -62px;
+  top: 52%;
+  z-index: 5;
+  width: 140px;
+}
+
+.signFrameVendor2 {
+  z-index: 99;
+  position: absolute;
+  left: 155px;
+  top: 30%;
+  width: 140px;
+}
+
+.signFrameImg {
+  width: 240px;
+}
+
+@media (min-width: 1024px) {
+  .signFrameImg {
+    width: 100%;
+  }
+  .signFrameVendor1 {
+    position: absolute;
+    left: -100px;
+    top: 52%;
+    z-index: 5;
+    width: 216px;
+  }
+  .signFrameVendor2 {
+    z-index: 5;
+    position: absolute;
+    left: 235px;
+    top: 33%;
+    width: 216px;
+  }
+}

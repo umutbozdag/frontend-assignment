@@ -1,0 +1,8 @@
+.tabs {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  overflow-x: auto;
+  z-index: var(--tabs-index);
+  background-color: var(--color-white);
+}

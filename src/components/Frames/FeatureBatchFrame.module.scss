@@ -1,0 +1,47 @@
+.batchFrame {
+  pointer-events: none;
+  position: relative;
+  overflow: hidden;
+}
+
+.batchFrameFile {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 50%;
+  margin-top: 25%;
+}
+
+@media (max-width: 1024px) {
+  .batchFrameImg {
+    width: 250px;
+  }
+
+  .batchFrameFile1 {
+    width: 165px;
+  }
+  
+  .batchFrameFile2 {
+    width: 182px;
+  }
+  
+  .batchFrameFile3 {
+    width: 193px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .batchFrameImg {
+    width: 100%;
+  }
+  .batchFrameFile1 {
+    top: 41%;
+  }
+  .batchFrameFile2 {
+    top: 45%;
+    z-index: 2;
+  }
+  .batchFrameFile3 {
+    top: 48%;
+    z-index: 3;
+  }
+}

@@ -1,0 +1,37 @@
+@import './base/normalize';
+@import './utils/functions';
+
+:root {
+  --base-font-size: 1rem;
+  --color-white: #FFFFFF;
+  --color-black: #000;
+  --color-emptiness: #FBFCFC;
+  --color-azure: #0381ff08;
+  --color-squant: #666666;
+  --color-brescian-blue: #0381FF;
+  --color-liberty-blue: #0B172A;
+  --color-void: #0B122A;
+  --color-indigo: #00000029;
+
+  --tabs-index: 3;
+  --radius-round: 100vmax;
+
+  --features-padding-desktop: 130px;
+  --features-padding-mobile: 56px;
+}
+
+body {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen-Sans,
+    Ubuntu,
+    Cantarell,
+    Helvetica Neue,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+}
