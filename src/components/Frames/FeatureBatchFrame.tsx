@@ -1,4 +1,4 @@
-import { useRef, useEffect } from 'react';
+import { useRef, useEffect, useLayoutEffect } from 'react';
 import styles from './FeatureBatchFrame.module.scss';
 import cn from 'classnames/bind';
 import gsap from 'gsap';
@@ -12,9 +12,8 @@ const cx = cn.bind(styles);
 export default function FeatureSignFrame() {
   const featureImgRef = useRef(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const tl = gsap.timeline();
-
     tl.fromTo(
       featureImgRef.current,
       {
@@ -29,11 +28,13 @@ export default function FeatureSignFrame() {
       .fromTo(
         '#batch-frame-file-1',
         {
-          top: '120%'
+          top: '120%',
+          scale: 0.8,
         },
         {
-          duration: 0.5,
+          duration: 0.4,
           top: '44%',
+          scale: 1,
           ease: 'power2.inOut',
         }
       )
@@ -41,22 +42,24 @@ export default function FeatureSignFrame() {
         '#batch-frame-file-2',
         {
           top: '120%',
+          scale: 0.8,
         },
         {
-          duration: 0.5,
-          top: '48%',
+          duration: 0.4,
+          scale: 1,
+          top: '47%',
           ease: 'power2.inOut',
         }
       )
       .fromTo(
         '#batch-frame-file-3',
         {
-          top: '120%'
+          top: '120%',
         },
         {
-          top: '52%',
+          top: '50%',
           ease: 'power2.inOut',
-          duration: 0.5,
+          duration: 0.4,
         }
       );
     return () => {
