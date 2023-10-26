@@ -1,8 +1,8 @@
-import { useContext, useEffect, useLayoutEffect } from 'react';
+import { useContext, useLayoutEffect } from 'react';
 import Icon from '../Icon/Icon';
 import styles from './TabItem.module.scss';
 import cn from 'classnames/bind';
-import { Context } from '../../context/Context';
+import { Context } from '../../context/ContextProvider';
 import { useRef } from 'react';
 import gsap from 'gsap';
 
@@ -15,68 +15,63 @@ interface ITabProps {
   idx: number;
 }
 
-const Tab = ({ label, icon, active, idx }: ITabProps) => {
-  const {
-    sharedData: { activeTab },
-    setSharedData,
-  } = useContext(Context)!;
+const Tab: React.FC<ITabProps> = ({ label, icon, active, idx }) => {
+  const { sharedData, setSharedData } = useContext(Context)!;
 
-  const ref = useRef(null);
+  const tabIconContainerRef = useRef(null);
 
-  const tabClass = cx('tab', {
+  const tabClass = cx('tabItem', {
     active,
   });
 
-  const iconClass = cx('tabIcon', {
+  const iconClass = cx('tabItemIcon', {
     active,
   });
 
   useLayoutEffect(() => {
-    const timeline = gsap.timeline();
+    const tl = gsap.timeline();
 
     if (active) {
-      timeline
-        .to(ref.current, {
-          borderLeftColor: '#0381FF',
-          duration: 0.08,
-          ease: 'circ.in',
-        })
-        .to(ref.current, {
+      tl.to(tabIconContainerRef.current, {
+        borderLeftColor: '#0381FF',
+        duration: 0.08,
+        ease: 'circ.in',
+      })
+        .to(tabIconContainerRef.current, {
           borderBottomColor: '#0381FF',
           duration: 0.08,
           ease: 'circ.in',
         })
-        .to(ref.current, {
+        .to(tabIconContainerRef.current, {
           borderRightColor: '#0381FF',
           duration: 0.08,
           ease: 'circ.in',
         })
-        .to(ref.current, {
+        .to(tabIconContainerRef.current, {
           borderTopColor: '#0381FF',
           duration: 0.08,
           ease: 'circ.in',
         });
     } else {
-      timeline
-        .to(ref.current, {
-          borderLeftColor: '#00000014',
-          duration: 0.08,
-          transitionDelay: 0.1,
-          ease: 'power3.out',
-        })
-        .to(ref.current, {
+      tl.to(tabIconContainerRef.current, {
+        borderLeftColor: '#00000014',
+        duration: 0.08,
+        transitionDelay: 0.1,
+        ease: 'power3.out',
+      })
+        .to(tabIconContainerRef.current, {
           borderBottomColor: '#00000014',
           duration: 0.08,
           transitionDelay: 0.1,
           ease: 'power2.out',
         })
-        .to(ref.current, {
+        .to(tabIconContainerRef.current, {
           borderRightColor: '#00000014',
           duration: 0.08,
           transitionDelay: 0.1,
           ease: 'power3.out',
         })
-        .to(ref.current, {
+        .to(tabIconContainerRef.current, {
           borderTopColor: '#00000014',
           duration: 0.08,
           transitionDelay: 0.1,
@@ -85,7 +80,7 @@ const Tab = ({ label, icon, active, idx }: ITabProps) => {
     }
 
     return () => {
-      timeline.kill();
+      tl.kill();
     };
   }, [active]);
 
@@ -100,17 +95,17 @@ const Tab = ({ label, icon, active, idx }: ITabProps) => {
   };
 
   return (
-    <div className={cx('tabContainer')}>
+    <div className={cx('tabItemContainer')}>
       <div
         className={tabClass}
         onClick={handleTabClick}
         tabIndex={0}
         onKeyUp={handleOnKeyUp}
       >
-        <div ref={ref} className={cx('tabIconContainer')}>
+        <div ref={tabIconContainerRef} className={cx('tabItemIconContainer')}>
           <Icon className={cx(iconClass)} icon={icon} />
         </div>
-        <p className={cx('tabLabel')}>{label}</p>
+        <p className={cx('tabItemLabel')}>{label}</p>
       </div>
     </div>
   );
