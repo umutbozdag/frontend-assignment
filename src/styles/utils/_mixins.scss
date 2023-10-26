@@ -1,0 +1,9 @@
+@import './breakpoints';
+@import './functions';
+
+@mixin breakpoint($breakpoint, $property: 'min-width') {
+  $value: map-get($breakpoints, $breakpoint);
+  @media (#{$property}: pxToRem($value)) {
+    @content;
+  }
+}
