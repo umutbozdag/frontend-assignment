@@ -8,14 +8,14 @@ import gsap from 'gsap';
 
 const cx = cn.bind(styles);
 
-interface ITabProps {
+type TabItemProps = {
   label: string;
   icon: string;
   active: boolean;
   idx: number;
 }
 
-const Tab: React.FC<ITabProps> = ({ label, icon, active, idx }) => {
+const TabItem = ({ label, icon, active, idx }: TabItemProps) => {
   const context = useContext(Context)!;
 
   const tabIconContainerRef = useRef(null);
@@ -111,4 +111,4 @@ const Tab: React.FC<ITabProps> = ({ label, icon, active, idx }) => {
   );
 };
 
-export default Tab;
+export default TabItem;

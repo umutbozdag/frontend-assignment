@@ -11,7 +11,7 @@ type TabsProps = {
   tabs: ITabItem[];
 };
 
-const Tabs: React.FC<TabsProps> = ({ tabs }) => {
+const Tabs = ({ tabs }: TabsProps) => {
   const {
     sharedData: { activeTab },
   } = useContext(Context)!;

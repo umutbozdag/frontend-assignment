@@ -18,8 +18,7 @@
         "project": "./tsconfig.json"
       },
       "rules": {
-        "react/react-in-jsx-scope": "off",
-        "react/prop-types": 0
+        "react/react-in-jsx-scope": "off"
       },
       "settings": {
         "react": {
