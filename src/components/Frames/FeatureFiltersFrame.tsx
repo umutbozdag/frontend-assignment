@@ -21,7 +21,7 @@ export default function FeatureFiltersFrame() {
         opacity: 1,
         duration: 0.5,
         ease: 'power2.inOut',
-      }
+      },
     );
 
     return () => {

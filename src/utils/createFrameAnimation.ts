@@ -8,7 +8,7 @@ interface CustomFromToConfig {
 
 const createFrameAnimation = <T>(
   el: Ref<T>,
-  customFromToConfig?: CustomFromToConfig
+  customFromToConfig?: CustomFromToConfig,
 ) => {
   const config = customFromToConfig || defaultConfig;
 

@@ -24,7 +24,7 @@ const FeatureSignFrame = () => {
         scale: 1,
         duration: 0.3,
         ease: 'expo.inOut',
-      }
+      },
     );
 
     return () => {

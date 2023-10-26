@@ -16,7 +16,7 @@ interface ITabProps {
 }
 
 const Tab: React.FC<ITabProps> = ({ label, icon, active, idx }) => {
-  const { sharedData, setSharedData } = useContext(Context)!;
+  const context = useContext(Context)!;
 
   const tabIconContainerRef = useRef(null);
 
@@ -85,7 +85,7 @@ const Tab: React.FC<ITabProps> = ({ label, icon, active, idx }) => {
   }, [active]);
 
   const handleTabClick = () => {
-    setSharedData({
+    context.setSharedData({
       activeTab: idx,
     });
   };

@@ -1,4 +1,4 @@
-import { useRef, useEffect, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import styles from './FeatureBatchFrame.module.scss';
 import cn from 'classnames/bind';
 import frame from '../../assets/batch-frame.png';
@@ -13,19 +13,19 @@ const files = [
   {
     id: 'batch-frame-file-1',
     src: batchFile3,
-    alt: '',
+    alt: 'File preview 1',
     classes: ['batchFrameFile', 'batchFrameFile1'],
   },
   {
     id: 'batch-frame-file-2',
     src: batchFile2,
-    alt: '',
+    alt: 'File preview 2',
     classes: ['batchFrameFile', 'batchFrameFile2'],
   },
   {
     id: 'batch-frame-file-3',
     src: batchFile1,
-    alt: '',
+    alt: 'File preview 3',
     classes: ['batchFrameFile', 'batchFrameFile3'],
   },
 ];
@@ -45,7 +45,7 @@ export default function FeatureSignFrame() {
         top: '44%',
         scale: 1,
         ease: 'power2.inOut',
-      }
+      },
     )
       .fromTo(
         '#batch-frame-file-2',
@@ -58,7 +58,7 @@ export default function FeatureSignFrame() {
           scale: 1,
           top: '47%',
           ease: 'power2.inOut',
-        }
+        },
       )
       .fromTo(
         '#batch-frame-file-3',
@@ -69,7 +69,7 @@ export default function FeatureSignFrame() {
           top: '50%',
           ease: 'power2.inOut',
           duration: 0.4,
-        }
+        },
       );
     return () => {
       tl.kill();

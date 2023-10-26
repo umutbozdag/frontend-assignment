@@ -51,7 +51,7 @@ const FeatureExportFrame = () => {
         yPercent: 0,
         duration: 0.4,
         delay: 0.99,
-      }
+      },
     )
       .fromTo(
         '#export-pdf',
@@ -64,7 +64,7 @@ const FeatureExportFrame = () => {
           xPercent: 0,
           yPercent: 0,
           duration: 0.3,
-        }
+        },
       )
       .fromTo(
         '#export-jpg',
@@ -77,8 +77,8 @@ const FeatureExportFrame = () => {
           xPercent: 0,
           yPercent: 0,
           duration: 0.3,
-          scale: 0.85
-        }
+          scale: 0.85,
+        },
       )
       .fromTo(
         '#export-txt',
@@ -90,8 +90,8 @@ const FeatureExportFrame = () => {
         {
           xPercent: 0,
           yPercent: 0,
-          duration: 0.3
-        }
+          duration: 0.3,
+        },
       );
 
     return () => {

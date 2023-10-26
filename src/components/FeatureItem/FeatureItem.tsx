@@ -20,7 +20,7 @@ const Feature = ({ title, description, subtitle, frame }: IFeatureItem) => {
       },
       {
         opacity: 1,
-      }
+      },
     );
 
     return () => {

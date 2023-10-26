@@ -9,13 +9,18 @@ type ButtonProps = {
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   children?: ReactNode;
-}
+};
 
-const Button = ({ type = 'primary', onClick, disabled, children }: ButtonProps) => {
+const Button = ({
+  type = 'primary',
+  onClick,
+  disabled,
+  children,
+}: ButtonProps) => {
   const buttonClass = cx('button', {
     primary: type === 'primary',
     secondary: type === 'secondary',
-    disabled
+    disabled,
   });
 
   return (
