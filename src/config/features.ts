@@ -1,6 +1,3 @@
-import FeatureScan from '../components/Features/FeatureScan';
-import Features from '../components/Features/Features';
-
 export interface IFeatureItem {
   id?: number;
   title: string;
