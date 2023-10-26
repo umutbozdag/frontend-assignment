@@ -1,43 +1,52 @@
 import { useRef, useEffect, useLayoutEffect } from 'react';
 import styles from './FeatureBatchFrame.module.scss';
 import cn from 'classnames/bind';
-import gsap from 'gsap';
 import frame from '../../assets/batch-frame.png';
 import batchFile1 from '../../assets/batch-file-1.png';
 import batchFile2 from '../../assets/batch-file-2.png';
 import batchFile3 from '../../assets/batch-file-3.png';
+import createFrameAnimation from '../../utils/createFrameAnimation';
 
 const cx = cn.bind(styles);
 
+const files = [
+  {
+    id: 'batch-frame-file-1',
+    src: batchFile3,
+    alt: '',
+    classes: ['batchFrameFile', 'batchFrameFile1'],
+  },
+  {
+    id: 'batch-frame-file-2',
+    src: batchFile2,
+    alt: '',
+    classes: ['batchFrameFile', 'batchFrameFile2'],
+  },
+  {
+    id: 'batch-frame-file-3',
+    src: batchFile1,
+    alt: '',
+    classes: ['batchFrameFile', 'batchFrameFile3'],
+  },
+];
 export default function FeatureSignFrame() {
-  const featureImgRef = useRef(null);
+  const batchFrameImgRef = useRef(null);
 
   useLayoutEffect(() => {
-    const tl = gsap.timeline();
+    const tl = createFrameAnimation(batchFrameImgRef.current);
     tl.fromTo(
-      featureImgRef.current,
+      '#batch-frame-file-1',
       {
-        yPercent: 100,
-        ease: 'back.in(1.7)',
+        top: '120%',
+        scale: 0.8,
       },
       {
-        yPercent: 5,
-        duration: 1,
+        duration: 0.4,
+        top: '44%',
+        scale: 1,
+        ease: 'power2.inOut',
       }
     )
-      .fromTo(
-        '#batch-frame-file-1',
-        {
-          top: '120%',
-          scale: 0.8,
-        },
-        {
-          duration: 0.4,
-          top: '44%',
-          scale: 1,
-          ease: 'power2.inOut',
-        }
-      )
       .fromTo(
         '#batch-frame-file-2',
         {
@@ -70,12 +79,22 @@ export default function FeatureSignFrame() {
     <div>
       <div className={cx('batchFrame')}>
         <img
-          ref={featureImgRef}
+          ref={batchFrameImgRef}
           className={cx('batchFrameImg')}
           src={frame}
           alt=""
         />
 
+        {files.map((file) => {
+          return (
+            <img
+              id="batch-frame-file-1"
+              src={batchFile3}
+              alt=""
+              className={cx('batchFrameFile', 'batchFrameFile1')}
+            />
+          );
+        })}
         <img
           id="batch-frame-file-1"
           src={batchFile3}

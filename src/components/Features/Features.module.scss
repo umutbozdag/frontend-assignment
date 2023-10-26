@@ -1,9 +1,0 @@
-.features {
-  padding-top: var(--features-padding-mobile);
-  background-color: var(--color-emptiness);
-}
-@media (min-width: 768px) {
-  .features {
-    padding-top: var(--features-padding-desktop);
-  }
-}

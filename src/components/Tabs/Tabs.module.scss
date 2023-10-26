@@ -3,6 +3,6 @@
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   overflow-x: auto;
-  z-index: var(--tabs-index);
+  z-index: var(--z-index-3);
   background-color: var(--color-white);
 }

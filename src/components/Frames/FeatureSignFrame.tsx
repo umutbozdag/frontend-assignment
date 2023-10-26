@@ -1,31 +1,19 @@
-import React, { useRef, useLayoutEffect } from 'react';
+import { useRef, useLayoutEffect } from 'react';
 import styles from './FeatureSignFrame.module.scss';
 import classnames from 'classnames/bind';
 import image from '../../assets/sign-frame.png';
-import gsap from 'gsap';
 import vendor1 from '../../assets/sign-frame-vendor-1.png';
 import vendor2 from '../../assets/sign-frame-vendor-2.png';
+import createFrameAnimation from '../../utils/createFrameAnimation';
 
 const cx = classnames.bind(styles);
 
-export default function FeatureSignFrame() {
-  const featureImgRef = useRef(null);
+const FeatureSignFrame = () => {
+  const signFrameImgRef = useRef(null);
 
   useLayoutEffect(() => {
-    const tl = gsap.timeline();
+    const tl = createFrameAnimation(signFrameImgRef.current);
     tl.fromTo(
-      featureImgRef.current,
-      {
-        yPercent: 100,
-        ease: 'back.in(1.8)', // Adjust the easing function as needed
-      },
-      {
-        yPercent: 5,
-        duration: 1,
-      }
-    ).set(featureImgRef.current, {
-      overflow: 'auto'
-    }).fromTo(
       ['#sign-frame-vendor1', '#sign-frame-vendor2'],
       {
         opacity: 0,
@@ -62,7 +50,7 @@ export default function FeatureSignFrame() {
           alt=""
         />
         <img
-          ref={featureImgRef}
+          ref={signFrameImgRef}
           loading="lazy"
           className={cx('signFrameImg')}
           src={image}
@@ -71,4 +59,6 @@ export default function FeatureSignFrame() {
       </div>
     </div>
   );
-}
+};
+
+export default FeatureSignFrame;

@@ -3,36 +3,26 @@ import styles from './FeatureFiltersFrame.module.scss';
 import filtersFrame from '../../assets/filters-frame.png';
 import filtersFrameVendor1 from '../../assets/filters-frame-vendor-1.png';
 import filtersFrameVendor2 from '../../assets/filters-frame-vendor-2.png';
-import { useLayoutEffect } from 'react';
-import gsap from 'gsap';
+import { useLayoutEffect, useRef } from 'react';
+import createFrameAnimation from '../../utils/createFrameAnimation';
 
 const cx = cn.bind(styles);
 
 export default function FeatureFiltersFrame() {
+  const filtersFrameImg = useRef(null);
   useLayoutEffect(() => {
-    const tl = gsap.timeline();
+    const tl = createFrameAnimation(filtersFrameImg.current);
     tl.fromTo(
-      '#filters-frame-img',
+      ['#filters-frame-vendor-1', '#filters-frame-vendor-2'],
       {
-        yPercent: 100,
-        ease: 'back.in(1.7)',
+        opacity: 0,
       },
       {
-        yPercent: 5,
-        duration: 1,
+        opacity: 1,
+        duration: 0.5,
+        ease: 'power2.inOut',
       }
-    )
-      .fromTo(
-        ['#filters-frame-vendor-1', '#filters-frame-vendor-2'],
-        {
-          opacity: 0
-        },
-        {
-          opacity: 1,
-          duration: 0.5,
-          ease: 'power2.inOut',
-        }
-      )
+    );
 
     return () => {
       tl.kill();
@@ -47,6 +37,7 @@ export default function FeatureFiltersFrame() {
           className={cx('filtersFrameImg')}
           src={filtersFrame}
           alt="Filters frame image"
+          ref={filtersFrameImg}
         />
         <img
           id="filters-frame-vendor-1"

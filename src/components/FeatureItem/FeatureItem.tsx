@@ -1,5 +1,4 @@
-import image from '../../assets/scan-frame.png';
-import classnames from 'classnames/bind';
+import cn from 'classnames/bind';
 import styles from './FeatureItem.module.scss';
 import { IFeatureItem } from '../../config/features';
 import Button from '../Button';
@@ -7,7 +6,7 @@ import { useLayoutEffect, useRef } from 'react';
 import gsap from 'gsap';
 import SpecificFeatureFrame from '../Frames/SpecificFeatureFrame';
 
-const cx = classnames.bind(styles);
+const cx = cn.bind(styles);
 const Feature = ({ title, description, subtitle, frame }: IFeatureItem) => {
   const featureContentRef = useRef(null);
 

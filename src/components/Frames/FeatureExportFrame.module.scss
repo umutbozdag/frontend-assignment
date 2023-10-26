@@ -1,0 +1,73 @@
+.exportFrameContainer {
+  position: relative;
+}
+
+.exportFrame {
+  overflow: hidden;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.exportArrowImg,
+.exportFileContainer {
+  position: absolute;
+}
+
+.exportArrowImg {
+  left: -10%;
+  top: 86%;
+  scale: 0.7;
+}
+
+.exportFileContainer {
+  top: 56%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.exportFileImg {
+  width: 100px;
+
+  &:not(.exportFileImg:last-child) {
+    margin-right: -5%;
+  }
+}
+
+.exportFrameImg {
+  width: 237px;
+}
+
+.exportJpgImg {
+  padding-bottom: 17%;
+  margin-left: -2.5%;
+  scale: 0.85;
+}
+
+@media (min-width: 1024px) {
+  .exportFileContainer {
+    top: 60%;
+  }
+  .exportFrameImg {
+    width: 100%;
+  }
+
+  .exportFileImg {
+    width: 145px;
+
+    &:not(.exportFileImg:last-child) {
+      margin-right: 0;
+    }
+  }
+
+  .exportJpgImg {
+    scale: 0.95;
+    padding-bottom: 12%;
+  }
+
+  .exportArrowImg {
+    width: 32px;
+  }
+}

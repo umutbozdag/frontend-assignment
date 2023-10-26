@@ -2,27 +2,15 @@ import React, { useRef, useLayoutEffect } from 'react';
 import styles from './FeatureScanFrame.module.scss';
 import classnames from 'classnames/bind';
 import image from '../../assets/scan-frame.png';
-import gsap from 'gsap';
+import createFrameAnimation from '../../utils/createFrameAnimation';
 
 const cx = classnames.bind(styles);
 
 export default function FeatureScanFrame() {
-  const featureImgRef = useRef(null);
+  const scanFrameImgRef = useRef(null);
 
   useLayoutEffect(() => {
-    const tl = gsap.timeline();
-    tl.fromTo(
-      featureImgRef.current,
-      {
-        yPercent: 100,
-        ease: 'back.in(1.7)',
-      },
-      {
-        yPercent: 5,
-        duration: 1,
-      }
-    );
-
+    const tl = createFrameAnimation(scanFrameImgRef.current);
     return () => {
       tl.kill();
     };
@@ -31,7 +19,7 @@ export default function FeatureScanFrame() {
     <div>
       <div className={cx('featureScanContainer')}>
         <img
-          ref={featureImgRef}
+          ref={scanFrameImgRef}
           src={image}
           alt="Scan frame"
           className={cx('scanImg')}

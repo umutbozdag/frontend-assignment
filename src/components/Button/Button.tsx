@@ -4,7 +4,7 @@ import styles from './Button.module.scss';
 
 const cx = cn.bind(styles);
 
-interface ButtonProps {
+type ButtonProps = {
   type?: 'primary' | 'secondary';
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;

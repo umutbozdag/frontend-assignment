@@ -1,31 +1,33 @@
-import React, { useState, useContext } from 'react';
-import TabItem from '../TabItem/TabItem';
+import { useContext } from 'react';
+import TabItem from '../TabItem';
 import { ITabItem } from '../../config/tabs';
 import styles from './Tabs.module.scss';
-import classnames from 'classnames/bind';
-import { Context } from '../../context/Context';
+import cn from 'classnames/bind';
+import { Context } from '../../context/ContextProvider';
 
-const cx = classnames.bind(styles);
+const cx = cn.bind(styles);
 
-interface ITabsProps {
+type TabsProps = {
   tabs: ITabItem[];
-}
+};
 
-const Tabs = ({ tabs }: ITabsProps) => {
-  const { sharedData: { activeTab } } = useContext(Context)!;
+const Tabs: React.FC<TabsProps> = ({ tabs }) => {
+  const {
+    sharedData: { activeTab },
+  } = useContext(Context)!;
 
   return (
-      <div className={cx('tabs')}>
-        {tabs.map((tab, index) => (
-          <TabItem
-            key={index}
-            icon={tab.icon}
-            label={tab.label}
-            idx={index}
-            active={activeTab === index}
-          />
-        ))}
-      </div>
+    <div className={cx('tabs')}>
+      {tabs.map((tab, index) => (
+        <TabItem
+          key={index}
+          icon={tab.icon}
+          label={tab.label}
+          idx={index}
+          active={activeTab === index}
+        />
+      ))}
+    </div>
   );
 };
 
