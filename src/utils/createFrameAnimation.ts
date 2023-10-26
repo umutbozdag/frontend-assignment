@@ -6,7 +6,10 @@ interface CustomFromToConfig {
   toVars: GSAPTweenVars;
 }
 
-const createFrameAnimation = <T>(el: Ref<T>, customFromToConfig?: CustomFromToConfig) => {
+const createFrameAnimation = <T>(
+  el: Ref<T>,
+  customFromToConfig?: CustomFromToConfig
+) => {
   const config = customFromToConfig || defaultConfig;
 
   const tl = gsap.timeline();
@@ -23,6 +26,7 @@ const defaultConfig: CustomFromToConfig = {
   toVars: {
     yPercent: 0,
     duration: 1,
+    marginBottom: '-4px',
   },
 };
 

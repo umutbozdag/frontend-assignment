@@ -1,13 +1,8 @@
-@media (max-width: 1200px) {
-  .featureContent {
-    width: 25rem;
-  }
-}
+@use '../../styles/utils/mixins';
 
 .feature {
   display: flex;
   flex-direction: column;
-  padding: 0 24px;
   align-items: center;
 }
 
@@ -19,7 +14,7 @@
 
 .featureContent {
   text-align: center;
-  width: 100%;
+  width: 22.5rem;
 }
 
 .featureSubtitle {
@@ -39,14 +34,14 @@
 }
 
 .featureDescription {
-  // TODO: use func
   font-size: 0.875rem;
   letter-spacing: 0.8px;
   color: var(--color-liberty-blue);
   margin-bottom: 32px;
+  line-height: 28px;
 }
 
-@media (min-width: 768px) {
+@include mixins.breakpoint('d-xs') {
   .feature {
     display: grid;
     align-items: center;
@@ -57,16 +52,37 @@
   .featureContent {
     text-align: right;
     order: 2;
+    width: 20rem;
+  }
+
+  .featureDescription {
+    font-size: 0.875rem;
+  }
+
+  .featureContainer {
+    margin-top: 28px;
+  }
+}
+
+@include mixins.breakpoint('d-sm') {
+  .featureContent {
     width: 25rem;
   }
 
   .featureDescription {
+    line-height: 32px;
     font-size: 1.25rem;
   }
 }
 
-@media (min-width: 1000px) {
+@include mixins.breakpoint('d-md') {
   .featureContent {
     width: 35rem;
+  }
+}
+
+@include mixins.breakpoint('p-xs', 'max-width') {
+  .featureContent {
+    width: 100%;
   }
 }

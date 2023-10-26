@@ -1,3 +1,5 @@
+@use '../../styles/utils/mixins';
+
 .filtersFrameContainer {
   position: relative;
 }
@@ -9,28 +11,27 @@
   -webkit-user-select: none;
 }
 
-.filtersFrameVendor1 {
+.filtersFrameVendor1, .filtersFrameVendor2 {
   position: absolute;
-  left: -7.5%;
-  top: 27%;
+  top: 23%;
   width: 1.7rem;
 }
 
+.filtersFrameVendor1 {
+  left: -7.5%;
+}
+
 .filtersFrameVendor2 {
-  position: absolute;
   right: -7.5%;
-  top: 27%;
-  width: 1.7rem;
 }
 
 .filtersFrameImg {
   width: 244px;
 }
 
-@media (min-width: 1024px) {
+@include mixins.breakpoint('d-sm') {
   .filtersFrameVendor1, .filtersFrameVendor2  {
     width: 42px;
-    top: 26%;
   }
   .filtersFrameImg {
     width: 100%;

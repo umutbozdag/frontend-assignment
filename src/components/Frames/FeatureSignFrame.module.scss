@@ -1,3 +1,5 @@
+@use '../../styles/utils/mixins';
+
 .signFrameContainer {
   position: relative;
 }
@@ -29,17 +31,18 @@
   width: 240px;
 }
 
-@media (min-width: 1024px) {
+@include mixins.breakpoint('d-sm') {
   .signFrameImg {
     width: 100%;
   }
   .signFrameVendor1 {
+    top: 51.5%;
     left: -26%;
     width: 216px;
   }
   .signFrameVendor2 {
     left: 65%;
-    top: 33%;
+    top: 28%;
     width: 216px;
   }
 }

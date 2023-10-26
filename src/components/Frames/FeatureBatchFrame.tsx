@@ -88,31 +88,14 @@ export default function FeatureSignFrame() {
         {files.map((file) => {
           return (
             <img
-              id="batch-frame-file-1"
-              src={batchFile3}
-              alt=""
-              className={cx('batchFrameFile', 'batchFrameFile1')}
+              key={file.id}
+              id={file.id}
+              src={file.src}
+              alt={file.alt}
+              className={cx([...file.classes])}
             />
           );
         })}
-        <img
-          id="batch-frame-file-1"
-          src={batchFile3}
-          alt=""
-          className={cx('batchFrameFile', 'batchFrameFile1')}
-        />
-        <img
-          id="batch-frame-file-2"
-          src={batchFile2}
-          alt=""
-          className={cx('batchFrameFile', 'batchFrameFile2')}
-        />
-        <img
-          id="batch-frame-file-3"
-          src={batchFile1}
-          alt=""
-          className={cx('batchFrameFile', 'batchFrameFile3')}
-        />
       </div>
     </div>
   );

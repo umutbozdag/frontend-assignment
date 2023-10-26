@@ -1,5 +1,5 @@
 import { useContext, useLayoutEffect } from 'react';
-import Icon from '../Icon/Icon';
+import Icon from '../Icon';
 import styles from './TabItem.module.scss';
 import cn from 'classnames/bind';
 import { Context } from '../../context/ContextProvider';

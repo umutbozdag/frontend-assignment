@@ -1,12 +1,12 @@
 import { useRef, useLayoutEffect } from 'react';
 import styles from './FeatureSignFrame.module.scss';
-import classnames from 'classnames/bind';
+import cn from 'classnames/bind';
 import image from '../../assets/sign-frame.png';
 import vendor1 from '../../assets/sign-frame-vendor-1.png';
 import vendor2 from '../../assets/sign-frame-vendor-2.png';
 import createFrameAnimation from '../../utils/createFrameAnimation';
 
-const cx = classnames.bind(styles);
+const cx = cn.bind(styles);
 
 const FeatureSignFrame = () => {
   const signFrameImgRef = useRef(null);

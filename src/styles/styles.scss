@@ -1,4 +1,5 @@
 @import './base/normalize';
+@import './utils';
 
 :root {
   --base-font-size: 1rem;
@@ -19,10 +20,8 @@
   --z-index-3: 3;
   --z-index-5: 5;
 
-  // TODO: convert to rem
-  --features-padding-desktop: 130px;
-  --features-padding-mobile: 56px;
-  
+  --features-padding-desktop: #{pxToRem(130px)};
+  --features-padding-mobile: #{pxToRem(56px)};
 }
 
 body {

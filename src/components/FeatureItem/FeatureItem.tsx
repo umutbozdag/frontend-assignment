@@ -16,7 +16,7 @@ const Feature = ({ title, description, subtitle, frame }: IFeatureItem) => {
       featureContentRef.current,
       {
         opacity: 0,
-        duration: 0.8,
+        duration: 0.08,
       },
       {
         opacity: 1,

@@ -1,6 +1,6 @@
 import classnames from 'classnames/bind';
 import styles from './App.module.scss';
-import { Hero } from './layout/hero/Hero';
+import Hero from './layout/Hero';
 
 const cx = classnames.bind(styles);
 

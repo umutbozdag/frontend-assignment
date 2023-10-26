@@ -1,3 +1,5 @@
+@use '../../styles/utils/mixins';
+
 .batchFrame {
   pointer-events: none;
   position: relative;
@@ -11,38 +13,29 @@
   // this is necessary to override gsap's value
   transform: translate(-50%, -50%) !important;
   left: 50%;
-  margin-top: 25%;
+  margin-top: 22%;
 }
 
-@media (max-width: 1024px) {
+@include mixins.breakpoint('d-sm', 'max-width') {
   .batchFrameImg {
     width: 250px;
   }
 
   .batchFrameFile1 {
-    width: 165px;
+    width: 168px;
   }
-  
+
   .batchFrameFile2 {
-    width: 182px;
+    width: 194px;
   }
-  
+
   .batchFrameFile3 {
-    width: 193px;
+    width: 210px;
   }
 }
 
-@media (min-width: 1200px) {
+@include mixins.breakpoint('d-md') {
   .batchFrameImg {
     width: 100%;
-  }
-  .batchFrameFile1 {
-    top: 41%;
-  }
-  .batchFrameFile2 {
-    top: 45%;
-  }
-  .batchFrameFile3 {
-    top: 48%;
   }
 }

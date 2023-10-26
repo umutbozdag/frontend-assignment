@@ -1,3 +1,5 @@
+@use '../../styles/utils/mixins';
+
 .exportFrameContainer {
   position: relative;
 }
@@ -24,15 +26,14 @@
   top: 56%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 100%;
+  left: -9%;
+  overflow: hidden;
 }
 
 .exportFileImg {
   width: 100px;
-
   &:not(.exportFileImg:last-child) {
-    margin-right: -5%;
+    margin-right: -2.5%;
   }
 }
 
@@ -41,29 +42,25 @@
 }
 
 .exportJpgImg {
-  padding-bottom: 17%;
+  padding-bottom: 12%;
   margin-left: -2.5%;
   scale: 0.85;
 }
 
-@media (min-width: 1024px) {
+@include mixins.breakpoint('d-sm') {
   .exportFileContainer {
-    top: 60%;
+    top: 56%;
+    left: -7%;
   }
   .exportFrameImg {
     width: 100%;
   }
 
   .exportFileImg {
-    width: 145px;
-
-    &:not(.exportFileImg:last-child) {
-      margin-right: 0;
-    }
+    width: 150px;
   }
 
   .exportJpgImg {
-    scale: 0.95;
     padding-bottom: 12%;
   }
 

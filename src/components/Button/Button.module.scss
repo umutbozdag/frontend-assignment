@@ -1,3 +1,5 @@
+@use '../../styles/utils/mixins';
+
 .button {
   border-radius: 0.125rem;
   color: var(--color-void);
@@ -7,14 +9,14 @@
   padding: 15px 20px;
   cursor: pointer;
   font-size: 0.926rem;
-  
+
   &:hover {
     border: 1px solid var(--color-brescian-blue);
     transition: 0.2s linear;
   }
 }
 
-@media (min-width: 425px) {
+@include mixins.breakpoint('d-sm') {
   .button {
     font-size: 1.25rem;
   }

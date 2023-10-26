@@ -39,6 +39,61 @@ const FeatureExportFrame = () => {
 
     const tl = gsap.timeline();
 
+    tl.fromTo(
+      '#export-arrow',
+      {
+        xPercent: 100,
+        yPercent: 150,
+        ease: 'back.in',
+      },
+      {
+        xPercent: 0,
+        yPercent: 0,
+        duration: 0.4,
+        delay: 0.99,
+      }
+    )
+      .fromTo(
+        '#export-pdf',
+        {
+          xPercent: 100,
+          yPercent: 150,
+          ease: 'back.in',
+        },
+        {
+          xPercent: 0,
+          yPercent: 0,
+          duration: 0.3,
+        }
+      )
+      .fromTo(
+        '#export-jpg',
+        {
+          xPercent: 0,
+          yPercent: 150,
+          ease: 'back.in',
+        },
+        {
+          xPercent: 0,
+          yPercent: 0,
+          duration: 0.3,
+          scale: 0.85
+        }
+      )
+      .fromTo(
+        '#export-txt',
+        {
+          xPercent: -100,
+          yPercent: 150,
+          ease: 'back.in',
+        },
+        {
+          xPercent: 0,
+          yPercent: 0,
+          duration: 0.3
+        }
+      );
+
     return () => {
       tl.kill();
     };
