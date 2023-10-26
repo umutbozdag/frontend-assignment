@@ -1,6 +1,17 @@
-.hero {
+.heroSection {
   display: flex;
   justify-content: center;
   flex-direction: column;
   height: 100%;
+}
+
+.featureWrapper {
+  padding-top: var(--features-padding-mobile);
+  background-color: var(--color-emptiness);
+  max-height: fit-content;
+}
+@media (min-width: 768px) {
+  .featureWrapper {
+    padding-top: var(--features-padding-desktop);
+  }
 }
