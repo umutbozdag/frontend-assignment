@@ -4,13 +4,17 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 100%;
+  height: fit-content;
 }
-
 .heroFeatureWrapper {
   padding-top: var(--features-padding-mobile);
   background-color: var(--color-emptiness);
-  max-height: fit-content;
+}
+
+@include breakpoint('p-md') {
+  .heroSection {
+    height: 100%;
+  }
 }
 @include breakpoint('d-xs') {
   .heroFeatureWrapper {
