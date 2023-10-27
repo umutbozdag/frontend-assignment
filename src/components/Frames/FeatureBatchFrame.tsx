@@ -42,7 +42,7 @@ export default function FeatureSignFrame() {
       },
       {
         duration: 0.4,
-        top: '44%',
+        top: '43%',
         scale: 1,
         ease: 'power2.inOut',
       },
@@ -56,7 +56,7 @@ export default function FeatureSignFrame() {
         {
           duration: 0.4,
           scale: 1,
-          top: '47%',
+          top: '45%',
           ease: 'power2.inOut',
         },
       )
@@ -66,7 +66,7 @@ export default function FeatureSignFrame() {
           top: '120%',
         },
         {
-          top: '50%',
+          top: '47%',
           ease: 'power2.inOut',
           duration: 0.4,
         },

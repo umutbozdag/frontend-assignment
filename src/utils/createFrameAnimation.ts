@@ -20,11 +20,12 @@ const createFrameAnimation = <T>(
 
 const defaultConfig: CustomFromToConfig = {
   fromVars: {
-    yPercent: 100,
-    ease: 'expo.in',
+    yPercent: 120,
+    ease: 'back.in(1.7)',
   },
   toVars: {
     yPercent: 0,
+    delay: 0.7,
     duration: 1,
     marginBottom: '-4px',
   },

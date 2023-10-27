@@ -9,10 +9,11 @@
   padding: 15px 20px;
   cursor: pointer;
   font-size: 0.926rem;
+  line-height: normal;
 
   &:hover {
     border: 1px solid var(--color-brescian-blue);
-    transition: 0.2s linear;
+    transition: 0.3s linear;
   }
 }
 

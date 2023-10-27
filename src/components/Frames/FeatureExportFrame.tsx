@@ -44,13 +44,12 @@ const FeatureExportFrame = () => {
       {
         xPercent: 100,
         yPercent: 150,
-        ease: 'back.in',
       },
       {
         xPercent: 0,
         yPercent: 0,
         duration: 0.4,
-        delay: 0.99,
+        delay: 1.5,
       },
     )
       .fromTo(
@@ -58,7 +57,6 @@ const FeatureExportFrame = () => {
         {
           xPercent: 100,
           yPercent: 150,
-          ease: 'back.in',
         },
         {
           xPercent: 0,
@@ -71,7 +69,6 @@ const FeatureExportFrame = () => {
         {
           xPercent: 0,
           yPercent: 150,
-          ease: 'back.in',
         },
         {
           xPercent: 0,
@@ -85,7 +82,6 @@ const FeatureExportFrame = () => {
         {
           xPercent: -100,
           yPercent: 150,
-          ease: 'back.in',
         },
         {
           xPercent: 0,

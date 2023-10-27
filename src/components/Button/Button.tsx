@@ -4,8 +4,10 @@ import styles from './Button.module.scss';
 
 const cx = cn.bind(styles);
 
+type ButtonType = 'primary' | 'secondary';
+
 type ButtonProps = {
-  type?: 'primary' | 'secondary';
+  type?: ButtonType;
   onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   disabled?: boolean;
   children?: ReactNode;
