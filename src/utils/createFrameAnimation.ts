@@ -25,7 +25,7 @@ const defaultConfig: CustomFromToConfig = {
   },
   toVars: {
     yPercent: 0,
-    delay: 0.7,
+    delay: 0.3,
     duration: 1,
     marginBottom: '-4px',
   },
