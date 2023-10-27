@@ -1,4 +1,4 @@
-@use '../../styles/utils/mixins';
+@import '../../styles/utils/mixins';
 
 .heroSection {
   display: flex;
@@ -12,7 +12,7 @@
   background-color: var(--color-emptiness);
   max-height: fit-content;
 }
-@include mixins.breakpoint('d-xs') {
+@include breakpoint('d-xs') {
   .heroFeatureWrapper {
     padding-top: var(--features-padding-desktop);
   }

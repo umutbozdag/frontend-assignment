@@ -1,4 +1,4 @@
-@use '../../styles/utils/mixins';
+@import '../../styles/utils/mixins';
 
 .feature {
   display: flex;
@@ -41,7 +41,7 @@
   line-height: 28px;
 }
 
-@include mixins.breakpoint('d-xs') {
+@include breakpoint('d-xs') {
   .feature {
     display: grid;
     align-items: center;
@@ -64,7 +64,7 @@
   }
 }
 
-@include mixins.breakpoint('d-sm') {
+@include breakpoint('d-sm') {
   .featureContent {
     width: 25rem;
   }
@@ -75,13 +75,13 @@
   }
 }
 
-@include mixins.breakpoint('d-md') {
+@include breakpoint('d-md') {
   .featureContent {
     width: 35rem;
   }
 }
 
-@include mixins.breakpoint('p-xs', 'max-width') {
+@include breakpoint('p-xs', 'max-width') {
   .featureContent {
     width: 100%;
   }

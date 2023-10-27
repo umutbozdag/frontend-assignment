@@ -1,4 +1,4 @@
-@use '../../styles/utils/mixins';
+@import '../../styles/utils/mixins';
 
 .batchFrame {
   pointer-events: none;
@@ -16,7 +16,7 @@
   margin-top: 22%;
 }
 
-@include mixins.breakpoint('d-sm', 'max-width') {
+@include breakpoint('d-sm', 'max-width') {
   .batchFrameImg {
     width: 250px;
   }
@@ -34,7 +34,7 @@
   }
 }
 
-@include mixins.breakpoint('d-md') {
+@include breakpoint('d-md') {
   .batchFrameImg {
     width: 100%;
   }

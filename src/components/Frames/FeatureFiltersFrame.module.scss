@@ -1,4 +1,4 @@
-@use '../../styles/utils/mixins';
+@import '../../styles/utils/mixins';
 
 .filtersFrameContainer {
   position: relative;
@@ -30,7 +30,7 @@
   width: 244px;
 }
 
-@include mixins.breakpoint('d-sm') {
+@include breakpoint('d-sm') {
   .filtersFrameVendor1,
   .filtersFrameVendor2 {
     width: 42px;

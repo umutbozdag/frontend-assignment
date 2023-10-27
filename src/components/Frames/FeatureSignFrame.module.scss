@@ -1,4 +1,4 @@
-@use '../../styles/utils/mixins';
+@import '../../styles/utils/mixins';
 
 .signFrameContainer {
   position: relative;
@@ -31,7 +31,7 @@
   width: 240px;
 }
 
-@include mixins.breakpoint('d-sm') {
+@include breakpoint('d-sm') {
   .signFrameImg {
     width: 100%;
   }
