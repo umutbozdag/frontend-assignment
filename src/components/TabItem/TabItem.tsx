@@ -13,7 +13,7 @@ type TabItemProps = {
   icon: string;
   active: boolean;
   idx: number;
-}
+};
 
 const TabItem = ({ label, icon, active, idx }: TabItemProps) => {
   const context = useContext(Context)!;
